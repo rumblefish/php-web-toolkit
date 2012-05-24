@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>RF Player</title>
+        
+        <style type="text/css">
+            #main {
+                width: 980px;
+                margin: 0 auto;
+                min-height: 600px;
+                background: #eee;
+                padding: 20px;
+                border-radius: 5px;
+                font-family: Verdana;
+            }
+            
+            /* zplayer */
+            div.zplayer-controlbar {
+                background: transparent;
+                height: auto;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                display: block;
+                float: left;
+                z-index: 4;
+            }
+            
+            div.zplayer-controlbar div.controlbar-inner {
+                background: #fff;
+                width: 100%;
+                position: relative;
+                bottom: 0px;
+                display: block;
+                float: left;
+                border: 0px solid #666;
+                z-index: 8;
+            }
+            
+            div.zplayer-controlbar a.play-pause {
+                width: 56px;
+                height: 25px;
+                display: block;
+                background: #FFFFFF url(imgs/zplayer-play.png) no-repeat top center;
+                text-indent: -9999px;
+                float: left;
+                border-right: 1px solid #E3E3E3;
+            }
+            
+            div.zplayer-controlbar a.play-pause.playing {
+                background: #FFFFFF url(imgs/zplayer-pause.png) no-repeat top center;
+            }
+            
+            div.zplayer-controlbar a.play-pause:hover {
+                background-position: bottom center;
+            }
+            
+            div.zplayer-controlbar a.volume {
+                width: 36px;
+                height: 25px;
+                display: block;
+                background: #FFFFFF url(imgs/jp-unmute.png) no-repeat top center;
+                text-indent: -9999px;
+                float: left;
+            }
+            
+            div.zplayer-controlbar a.volume.muted {
+                background: #FFFFFF url(imgs/jp-mute.png) no-repeat top center;
+            }
+            
+            div.zplayer-controlbar a.volume:hover {
+                background-position: bottom center;
+            }
+            
+            div.zplayer-controlbar div.zplayer-volholder {
+                width: auto;
+                height: 25px;
+                display: block;
+                float: left;
+                border-right: 1px solid #E3E3E3;
+            }
+            
+            div.zplayer-controlbar div.volumebar {
+                width: 60px;
+                height: 5px;
+                margin: 9px 5px;
+                display: none;
+                background: #E3E3E3;
+                float: left;
+                border: 1px solid #ddd;
+            }
+            
+            div.zplayer-controlbar div.volumebar div.zplayer-setting {
+                height: 5px;
+                width: 0px;
+                display: block;
+                float: left;
+                background: #2AA9E0;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 16;
+            }
+            
+            div.zplayer-setting div.zplayer-handle {
+                position: absolute;
+                width: 3px;
+                border: 1px solid #aaa;
+                height: 9px;
+                display: block;
+                background: #ccc;
+                border-radius: 3px;
+                top: -3px;
+                right: -2px;
+                float: left;
+                z-index: 20;
+            }
+            
+            div.zplayer-controlbar div.status {
+                width: 100%;
+                height: 14px;
+                display: block;
+                float: left;
+                background: transparent;
+                position: relative;
+                left: 0px;
+                border-bottom: 1px solid #888;
+                z-index: 10;
+            }
+            
+            div.zplayer-controlbar div.zplayer-bar {
+                width: 100%;
+                height: 8px;
+                display: block;
+                float: left;
+                background: #666;
+                position: absolute;
+                bottom: 0px;
+                z-index: 14;
+            }
+                      
+            div.zplayer-controlbar div.zplayer-loaded {
+                height: 8px;
+                width: 0px;
+                display: block;
+                float: left;
+                background: #C0C0C0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 16;
+            }
+            
+            div.zplayer-controlbar div.zplayer-progress {
+                height: 8px;
+                width: 0px;
+                display: block;
+                float: left;
+                background: #2AA9E0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 18;
+            }
+            
+            div.zplayer-controlbar div.zplayer-progress a.zplayer-grip {
+                width: 19px;
+                height: 19px;
+                display: block;
+                float: left;
+                position: absolute;
+                z-index: 20;
+                right: -9px;
+                top: -6px;
+                background: url(imgs/zplayer-grip.png) no-repeat top left;
+            }
+            
+            div.zplayer-controlbar div.zplayer-progress a.zplayer-grip:hover {
+                background-position: bottom left;
+            }
+            
+            div.zplayer-controlbar div.zplayer-timer {
+                width: auto;
+                height: 11px;
+                display: block;
+                float: left;
+                font-size: 10px;
+                border-right: 1px solid #E3E3E3;
+                padding: 7px 5px;
+                color: #aaa;
+                font-weight: bold;
+            }
+            
+            div.zplayer-timer span {
+                line-height: 11px;
+            }
+            
+            div.zplayer-timer span.zplayer-current {
+                color: #2AA9E0;
+            }
+        </style>
+        
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/swfobject.js"></script>
+        <script type="text/javascript" src="js/jquery.zplayer.js"></script>
+    </head>
+
+    <body>
+        <div id="main">   
+            
+            <a class="video-link" id="test" href="http://www.youtube.com/watch?v=3Sk7cOqB9Dk">Old Spice | Boat</a>
+<!--            <a class="video-link" href="http://www.youtube.com/watch?v=owGykVbfgUE">Old Spice | Smell Like a Man, Man.</a>-->
+<a href="#" id="play_toggle">play/pause</a>
+<a href="#" id="loader">Load owGykVbfgUE</a>
+        </div>
+        
+        <script type="text/javascript">
+            $(function() {
+                $('.video-link').zplayer({
+                    autohide:false,
+                    height: 162,
+                    width: 294
+                });
+                               
+                // test binding to events
+                $('#test').parent().bind('onSeek.zplayer', function(e) {
+                    alert('seek event triggered');
+                });
+                
+                $('#test').parent().bind('onPlay.zplayer', function(e) {
+                    alert('play Event triggered');
+                });
+                
+                //test method calls
+                $('#test').zplayer('style', {
+                    border : '2px solid #666',
+                    'margin-bottom' : '5px'
+                });
+                
+                $('#play_toggle').click(function() {
+                    $('#test').zplayer('togglePlay');
+                });
+                
+                 $('#loader').click(function() {
+                    $('#test').zplayer('cue', 'owGykVbfgUE');
+                });
+                
+                
+            });
+        </script>
+    </body>
+</html>

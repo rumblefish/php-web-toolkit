@@ -1,0 +1,264 @@
+/* 
+    Document   : jquery.zplayer
+    Created on : 28 Dec 2011, 12:20:18 AM
+    Author     : Rory
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* Default zplayer theme */
+div.zplayer-player {
+    background: #000;
+}
+
+div.zplayer-error-message {
+    display: none;
+    margin: auto 0;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    min-height: 30px;              
+}
+
+div.zplayer-controls {
+    background: transparent;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    display: block;
+    float: left;
+    z-index: 4;
+}
+
+div.zplayer-controls div.zplayer-controls-wrapper {
+    background: -moz-linear-gradient(top, #eee, #ccc); /* FF 3.6+ */  
+    background: -ms-linear-gradient(top, #eee, #ccc); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eee), color-stop(100%, #ccc)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(top, #eee, #ccc); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(top, #eee, #ccc); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc');  /*IE6 & IE7  */ 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ccccccc')";  /*IE8+   */
+    background: linear-gradient(#eee, #ccc); /* the standard */ 
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    display: block;
+    float: left;
+    z-index: 8;
+}
+
+div.zplayer-controls a.zplayer-toggle-play {
+    width: 56px;
+    height: 25px;
+    display: block;
+    background: url(../imgs/zplayer-play.png) no-repeat top center;
+    text-indent: -9999px;
+    float: left;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #eee;
+}
+
+div.zplayer-controls a.zplayer-toggle-play.zplayer-playing {
+    background: url(../imgs/zplayer-pause.png) no-repeat top center;
+}
+
+div.zplayer-controls a.zplayer-toggle-play:hover {
+    background-position: bottom center;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound {
+    margin: 0;
+    padding: 0;
+    outline: 0 none;
+    width: 36px;
+    height: 25px;
+    display: block;
+    background: url(../imgs/zplayer-sound.png) no-repeat -36px 0;
+    text-indent: -9999px;
+    float: left;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound.zplayer-low {
+    background-position: 0 0;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound.zplayer-low:hover {
+    background-position: 0 -25px;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound:hover {
+    background-position: -36px -25px;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound.zplayer-muted {
+    background-position: -72px 0;
+}
+
+div.zplayer-controls a.zplayer-toggle-sound.zplayer-muted:hover {
+    background-position: -72px -25px;
+}
+
+div.zplayer-controls div.zplayer-volume-wrapper {
+    width: auto;
+    height: 25px;
+    display: block;
+    float: left;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #eee;
+}
+
+div.zplayer-controls div.zplayer-volume-bar {
+    width: 60px;
+    height: 6px;
+    margin: 9px 7px 8px 2px;
+    display: none;
+    background: #ddd;
+    float: left;
+    border: 1px solid #aaa;
+    border-color: #aaa #eee #eee #aaa;
+    border-radius: 0px;
+    box-shadow: 0px 0px 2px #aaa inset;
+}
+
+div.zplayer-controls div.zplayer-volume-bar div.zplayer-volume-level {
+    height: 6px;
+    width: 0px;
+    display: block;
+    float: left;
+    background: -moz-linear-gradient(top, #FF9899, #BA2528); /* FF 3.6+ */  
+    background: -ms-linear-gradient(top, #FF9899, #BA2528); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FF9899), color-stop(100%, #BA2528)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(top, #FF9899, #BA2528); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(top, #FF9899, #BA2528); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9899', endColorstr='#BA2528');  /*IE6 & IE7  */ 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9899', endColorstr='#BA2528')";  /*IE8+   */
+    background: linear-gradient(#FF9899, #BA2528); /* the standard */ 
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 16;
+    border-radius: 0px;               
+}
+
+div.zplayer-volume-level div.zplayer-handle {
+    position: absolute;
+    width: 9px;
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 0px;
+    box-shadow: -2px -2px 6px #bbb inset;
+    height: 4px;
+    display: block;
+    top: 0px;
+    right: -10px;
+    float: left;
+    z-index: 20;
+}
+
+div.zplayer-controls div.zplayer-seek-bar {
+    width: 100%;
+    height: 14px;
+    display: block;
+    float: left;
+    background: transparent;
+    position: relative;
+    left: 0px;
+    z-index: 10;
+}
+
+div.zplayer-controls div.zplayer-bar-wrapper {
+    width: 100%;
+    height: 8px;
+    display: block;
+    float: left;
+    background: -moz-linear-gradient(top, #aaa, #eee); /* FF 3.6+ */  
+    background: -ms-linear-gradient(top, #aaa, #eee); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaa), color-stop(100%, #eee)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(top, #aaa, #eee); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(top, #aaa, #eee); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#eeeeee');  /*IE6 & IE7  */ 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#eeeeee')";  /*IE8+   */
+    background: linear-gradient(#aaa, #eee); /* the standard */ 
+    position: absolute;
+    bottom: 0px;
+    z-index: 14;
+    border-top: 1px solid #eee;
+    box-shadow: -1px -1px 1px #aaa inset;
+}
+
+div.zplayer-controls div.zplayer-loaded {
+    height: 8px;
+    width: 0px;
+    display: block;
+    float: left;
+    background: -moz-linear-gradient(top, #bbb, #404040); /* FF 3.6+ */  
+    background: -ms-linear-gradient(top, #bbb, #404040); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bbb), color-stop(100%, #404040)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(top, #bbb, #404040); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(top, #bbb, #404040); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbbbbb', endColorstr='#404040');  /*IE6 & IE7  */ 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#bbbbbb', endColorstr='#404040')";  /*IE8+   */
+    background: linear-gradient(#bbb, #404040); /* the standard */ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 16;
+}
+
+div.zplayer-controls div.zplayer-progress {
+    height: 8px;
+    width: 0px;
+    display: block;
+    float: left;
+    background: -moz-linear-gradient(top, #FF9899, #BA2528); /* FF 3.6+ */  
+    background: -ms-linear-gradient(top, #FF9899, #BA2528); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FF9899), color-stop(100%, #BA2528)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(top, #FF9899, #BA2528); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(top, #FF9899, #BA2528); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9899', endColorstr='#BA2528');  /*IE6 & IE7  */ 
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9899', endColorstr='#BA2528')";  /*IE8+   */
+    background: linear-gradient(#FF9899, #BA2528); /* the standard */ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 18;
+}
+
+div.zplayer-controls div.zplayer-grip {
+    width: 11px;
+    height: 6px;
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 20;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 0px;
+    box-shadow: -2px -2px 6px #bbb inset;
+}
+
+div.zplayer-controls div.zplayer-timer {
+    width: auto;
+    height: 9px;
+    display: block;
+    float: left;
+    font-size: 9px;
+    border-left: 1px solid #eee;
+    padding: 7px 5px 9px 5px;
+    color: #777;
+    font-weight: normal;
+    text-shadow: 1px 1px #fff;
+}
+
+div.zplayer-timer span {
+    line-height: 9px;
+}
+
+div.zplayer-timer span.zplayer-current {
+    color: #BD272A;
+}
+
