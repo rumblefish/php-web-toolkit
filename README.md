@@ -121,7 +121,7 @@ The following parameters can be used as search terms:
 
 The method calls within the Utils class use data from the Exchange class, and return that data combined with simple HTML and javascript for basic layout needs. 
 
-### UTILITIES DETAILS
+## UTILITIES DETAILS
 
 The Utilities class consists of the following functions:
 
