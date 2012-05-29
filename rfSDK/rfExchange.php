@@ -23,7 +23,6 @@
  this file requires a written agreement with Rumblefish, Inc.
  */
 
-
 require_once 'rfExchangeEngine.php';
 class rfExchange extends rfExchangeEngine {
 
@@ -532,14 +531,17 @@ class rfExchange extends rfExchangeEngine {
     }
 
     public static function sfxTracks($id, $params=array()){
+        
+        $output = self::getOutput_format();
+        self::setOutput_format('Array');
+        
         $tracks = self::playlist($id, $params);
+        
         $data['media'] = array();
         $data['media'] = self::mapMediaArray($tracks['media']);
 
         self::setOutput_format($output);
-        return self::formatResult($tree);
-        
-        return $data;
+        return self::formatResult($data);
     }
 
     public static function songInfo($id){

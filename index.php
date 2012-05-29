@@ -96,13 +96,13 @@ if ($expire_time){
  * pass default video parameter
  */
 //rf - P_epaFV_Ka0
-$result = rfUtils::syncPlayer("5s5lSKq-Dpc");
+//$result = rfUtils::syncPlayer("5s5lSKq-Dpc");
 
 /*
  * SFX
  */
-//$tree = rfExchange::sfx();
-//$result = rfUtils::sfx($tree);
+$tree = rfExchange::sfx();
+$result = rfUtils::sfx($tree);
 
 /*
  * Song info
