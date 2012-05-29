@@ -28,7 +28,7 @@
  * Rumblefish Exchange Engine
  */
 
-/*
+/**
  * Current available ouput types
  */
 define('RF_ARRAY', 'Array');
@@ -181,9 +181,7 @@ class rfExchangeEngine {
                 } elseif (isset($_SERVER['HTTP_CLIENT_IP'])) {
                     $return['ip'] = $_SERVER['HTTP_CLIENT_IP'];
                 }
-            } else {
-                $return['ip'] = zp('config')->get('rumblefish.cli_ip_address');
-            }
+            } 
         }
 
         $base->addArgs(array('token' => self::$__settings->token, 'ip' => $return['ip']));
