@@ -87,13 +87,13 @@ class rfExchange extends rfExchangeEngine {
         return self::formatResult($tree);
     }
 
-     public static function getFeaturedplaylists($params = false) {
+     public static function getFeaturedplaylists() {
         $output = self::getOutput_format();
         self::setOutput_format('Array');
 
         $data['playlists'] = false;
         $data['playlists'] = self::getFeatured();
-        $data['defaultPID'] = isset($params['id']) ? zp('url')->build('rf', 'playlistTracks', $params) : 0;
+        
         self::setOutput_format($output);
         return self::formatResult($data);
     }
