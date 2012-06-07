@@ -401,8 +401,8 @@ class rfExchangeEngine {
     public static function getMedia($id) {
         $base = new rfBase(self::getUrl() . 'media');
 
-        $return['ip'] = self::$__settings->ip;
-        $base->addArgs(array('id' => $id, 'ip' => $return['ip']));
+        $ip = self::$__settings->ip;
+        $base->addArgs(array('id' => $id, 'ip' => $ip));
         $base->execute();
 
         $result = json_decode($base->getResponseBody(), true);
