@@ -23,6 +23,8 @@
  this file requires a written agreement with Rumblefish, Inc.
  */
 
+ini_set('display_errors', 1);
+error_reporting(-1);
 
 $trackID='';
 if (isset($_REQUEST['trackID'])){

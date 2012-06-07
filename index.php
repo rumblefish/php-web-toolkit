@@ -23,7 +23,6 @@
  this file requires a written agreement with Rumblefish, Inc.
  */
 
-
 /*
  * Rumblefish SDK - DEMO
  * This is a basic demo that displays how to use the rfSDK
@@ -75,8 +74,8 @@ if ($expire_time){
 /*
  * Occasions
  */
-//$tree = rfExchange::occasionTree();
-//$result = rfUtils::occasion($tree);
+$tree = rfExchange::occasionTree();
+$result = rfUtils::occasion($tree);
 
 /*
  * Playlists
@@ -101,8 +100,8 @@ if ($expire_time){
 /*
  * SFX
  */
-$tree = rfExchange::sfx();
-$result = rfUtils::sfx($tree);
+//$tree = rfExchange::sfx();
+//$result = rfUtils::sfx($tree);
 
 /*
  * Song info
