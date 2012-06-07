@@ -28,8 +28,8 @@
 <li class="song-info row">
     <div class="ten columns">
         <dl class="song-information">
-            <dt>Song Title : </dt><dd><?php echo $title; ?></dd>
-            <dt>Provider Reference : </dt><dd><?php echo $provider_reference; ?></dd>
+            <dt>Song Title : </dt><dd><?php if (isset($title)){ echo $title; }?></dd>
+            <dt>Provider Reference : </dt><dd><?php if (isset($provider_reference)){ echo $provider_reference; }?></dd>
             <dt style="clear: both;">Artist : </dt><dd class="songartistcell">
                 <?php
                     $artistsList = array();

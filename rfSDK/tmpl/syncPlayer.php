@@ -34,7 +34,7 @@
             <div class="youtubeplayer four columns margin-0">
                 <code id="youtube_block" class="zp-static" data-call="rf youtubevid" data-params="" data-access="guest"></code>
                 <div id="youtubePlayer">
-                    <a href="https://youtu.be/<?php echo $default;?>" id="yt_zplayer">Demo</a>
+                    <a href="https://youtu.be/<?php if(isset($default)){echo $default;}?>" id="yt_zplayer">Demo</a>
                 </div>
                 <div id="youtubePlayerMsg">
                     <div id="ytplayerAlert" class="oops">
