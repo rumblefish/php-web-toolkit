@@ -100,11 +100,11 @@ if($playlists){?>
             //run the ajax here!!!!!
             alert('playlist ID: '+$(this).attr('data-rel'));
             $('#table').html('<div class="rf-main-loader"></div>');
-            $('#table').load('/demo-ajax/playlist_table.php',{ 'playlistID': $(this).attr('data-rel') });
+            $('#table').load('../../demo-ajax/playlist_table.php',{ 'playlistID': $(this).attr('data-rel') });
         });
 
         <?php
-        if($defaultPID) { ?>
+        if (isset($defaultPID)) { ?>
             $('.playlistsub').html('<div class="clearfix rf-main-loader"></div>');
             $.get('<?php echo $defaultPID; ?>',function(data){
             $('.playlistsub').html(data.output);
@@ -118,7 +118,7 @@ if($playlists){?>
     <script>
         $(function () {
             $('#playlist').html('<img src="../img/loader.gif" />');
-            $.get('<?php echo $defaultPID; ?>',function(data){
+            $.get('<?php// echo $defaultPID; ?>',function(data){
                 $('#playlist').html(data.output);
             },'json');
         });
