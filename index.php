@@ -81,8 +81,8 @@ if ($expire_time){
 /*
  * Playlists
  */
-$data = rfExchange::getFeaturedplaylists();
-$result = rfUtils::featuredplayLists($data);
+//$data = rfExchange::getFeaturedplaylists();
+//$result = rfUtils::featuredplayLists($data);
 
 //$data = rfExchange::artistTracks($id);
 //$result = rfUtils::trackList($data);
@@ -96,7 +96,7 @@ $result = rfUtils::featuredplayLists($data);
  * pass default video parameter
  */
 //rf - P_epaFV_Ka0
-//$result = rfUtils::syncPlayer("5s5lSKq-Dpc");
+$result = rfUtils::syncPlayer("5s5lSKq-Dpc");
 
 /*
  * SFX
