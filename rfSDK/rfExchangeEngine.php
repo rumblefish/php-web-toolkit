@@ -86,7 +86,7 @@ class rfExchangeEngine {
             $logfile = $workingDir.DIRECTORY_SEPARATOR.'log'.DIRECTORY_SEPARATOR;
 
             if (!file_exists($logfile)) {
-                mkdir($logfile, 0755, true);
+                mkdir($logfile, 0777, true);
             }
         }
 
@@ -108,6 +108,11 @@ class rfExchangeEngine {
 
         if (self::$__settings->logdir){
             $handle = fopen(self::$__settings->logdir . '' . $fileprefix . DATE("Ymd"). '.rfExhange.log', 'ab');
+
+			if(!$handle){
+				throw new rfExchangeException('You do not have permissions to write to this file' . self::$__settings->logdir . '' . $fileprefix . DATE("Ymd"). '.rfExhange.log');
+			}
+
             $entry = 'Entry ' . date('g:i:s a') . ' >> ';
             $entry .= $logMsg;
             $entry .= "\r\n";

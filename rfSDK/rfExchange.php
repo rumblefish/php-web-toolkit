@@ -255,7 +255,7 @@ class rfExchange extends rfExchangeEngine {
         return self::formatResult($return);
     }
 
-    function getWaveForm($id) {
+    public static function getWaveForm($id) {
         $output = self::getOutput_format();
         self::setOutput_format('Array');
         
