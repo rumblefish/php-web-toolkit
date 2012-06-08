@@ -27,6 +27,7 @@
  * Rumblefish SDK - DEMO
  * This is a basic demo that displays how to use the rfSDK
  */
+
 session_start();
 function pre($var){
     echo "<pre>";
@@ -34,7 +35,7 @@ function pre($var){
     echo "</pre>";
 }
 $workingDir = dirname(__FILE__);
-error_reporting(-1);
+
 // The 2 base classes must always be included rfBase.php and rfExchange.php,
 // rfUtil will provide Markup for rapid development
 require_once($workingDir.DIRECTORY_SEPARATOR.'rfSDK'. DIRECTORY_SEPARATOR .'rfBase.php');
@@ -74,14 +75,14 @@ if ($expire_time){
 /*
  * Occasions
  */
-$tree = rfExchange::occasionTree();
-$result = rfUtils::occasion($tree);
+//$tree = rfExchange::occasionTree();
+//$result = rfUtils::occasion($tree);
 
 /*
  * Playlists
  */
-//$data = rfExchange::getFeaturedplaylists();
-//$result = rfUtils::featuredplayLists($data);
+$data = rfExchange::getFeaturedplaylists();
+$result = rfUtils::featuredplayLists($data);
 
 //$data = rfExchange::artistTracks($id);
 //$result = rfUtils::trackList($data);

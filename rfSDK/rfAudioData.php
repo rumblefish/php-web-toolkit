@@ -29,6 +29,7 @@ if (isset($_REQUEST['id'])){
     $id = $_REQUEST['id'];
 }
 
+
 $workingDir = dirname(__FILE__);
 require_once($workingDir.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'rfSDK'. DIRECTORY_SEPARATOR .'rfBase.php');
 require_once($workingDir.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'rfSDK'. DIRECTORY_SEPARATOR .'rfExchange.php');
@@ -36,7 +37,7 @@ require_once($workingDir.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'rfSDK'. D
 rfExchange::setUp("sandbox", "sandbox");
 
 $expire_time = true;
-if (!$_SESSION['rftoken']){
+if (!isset($_SESSION['rftoken'])){
     $time = time();
     if (isset($_SESSION['rftoken']['expire'])){
         if ($time < $_SESSION['rftoken']['expire']){
